@@ -1,5 +1,8 @@
-﻿  Lab1.cpp
-D:\MyDevelop\VS\SysProgramming\SysProgramming\Lab1.cpp(57,20): warning C4018: <: несоответствие типов со знаком и без знака
-  Lab2.cpp
+﻿  Lab2.cpp
+D:\MyDevelop\VS\SysProgramming\SysProgramming\Lab2.cpp(26,21): warning C4018: <: несоответствие типов со знаком и без знака
+  Lab3.cpp
   Создание кода...
-  SysProgramming.vcxproj -> D:\MyDevelop\VS\SysProgramming\Debug\SysProgramming.exe
+Lab3.obj : error LNK2005: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl getInputFilePath(void)" (?getInputFilePath@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ) уже определен в Lab2.obj
+Lab3.obj : error LNK2005: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl getOutputFilePath(void)" (?getOutputFilePath@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ) уже определен в Lab2.obj
+Lab3.obj : error LNK2005: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl input(bool)" (?input@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z) уже определен в Lab2.obj
+D:\MyDevelop\VS\SysProgramming\Debug\SysProgramming.exe : fatal error LNK1169: обнаружен многократно определенный символ - один или более

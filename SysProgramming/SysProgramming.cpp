@@ -5,13 +5,15 @@
 #include <string>
 #include "FileService.h"
 #include "Lab1.h"
+#include "Lab2.h"
+#include "Lab3.h"
 
 using namespace std;
 
 void writeLabs();
-bool chooseLab(int labNumber);
+bool chooseLab(int labNumber, char* argv[]);
 
-int main()
+int main(int argc, char* argv[])
 {
 	setlocale(LC_ALL, "Russian");
 	int answer;
@@ -22,7 +24,7 @@ int main()
 
 		cin >> answer;
 
-		bool isExit = chooseLab(answer);
+		bool isExit = chooseLab(answer, argv);
 		if (isExit)
 			return 0;
 	}
@@ -31,15 +33,23 @@ int main()
 void writeLabs()
 {
 	cout << "1) Лабораторная работа №1\n";
+	cout << "2) Лабораторная работа №2\n";
+	cout << "3) Лабораторная работа №3\n";
 	cout << "0) Выход из программы\n";
 }
 
-bool chooseLab(int labNumber)
+bool chooseLab(int labNumber, char* argv[])
 {
 	switch (labNumber)
 	{
 	case 1:
 		Lab1();
+		break;
+	case 2:
+		Lab2();
+		break;
+	case 3:
+		Lab3((int)argv[0]);
 		break;
 	case 0:
 		return true;

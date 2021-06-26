@@ -10,27 +10,21 @@ using namespace std;
 
 string input(bool isFile);
 string getInputFilePath();
-void output(bool isFile, bool isHave);
+void output(bool isFile, int number);
 string getOutputFilePath();
 
-void Lab2() {
+void Lab3(int shift) {
 	while (true)
 	{
 		bool isFileIn = isFileInput();
 		bool isFileOut = isFileOutput();
 
 		string str = input(isFileIn);
+		int n = stoi(str);
 
-		bool result = false;
+		n = n >> shift;
 
-		for (int i = 1; i < str.size(); i++) {
-			if (str[i] == '-' && str[i-1] == ',') {
-				result = true;
-				break;
-			}
-		}
-
-		output(isFileOut, result);
+		output(isFileOut, n);
 
 		if (!isFileIn && wanaRetry()) {
 			continue;
@@ -47,7 +41,7 @@ string input(bool isFile) {
 		return str;
 	}
 	else {
-		cout << "¬ведите строку: ";
+		cout << "¬ведите число: ";
 		string str;
 		cin >> str;
 		return str;
@@ -65,21 +59,15 @@ string getInputFilePath() {
 	return filePath;
 }
 
-void output(bool isFile, bool isHave) {
-	string answer;
-	if (isHave) {
-		answer = "There is a sequence ',-'\n";
-	}
-	else {
-		answer = "Sequence ',-' is not found\n";
-	}
+void output(bool isFile, int number) {
 	if (isFile) {
 		string filePath = getOutputFilePath();
-		WriteInFile(filePath, answer);
+		string result = "Number is " + number;
+		WriteInFile(filePath, result);
 	}
 	else {
 		cout << "–езультат:\n";
-		cout << answer;
+		cout << number;
 	}
 }
 

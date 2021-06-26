@@ -30,7 +30,8 @@ string ReadFile(string filePath)
 }
 
 void WriteInFile(string filePath, string value) {
-    fstream file;
+
+    ofstream file;
     file.open(filePath, ios::out);
     if (!file) {
         cout << "File not created!\n";

@@ -63,7 +63,7 @@ void output(bool isFile, vector<int> arr) {
 		WriteInFile(fileOutputPathLab1, values);
 	}
 	else {
-		cout << "Результа\n";
+		cout << "Результат:\n";
 		cout << values;
 	}
 }
